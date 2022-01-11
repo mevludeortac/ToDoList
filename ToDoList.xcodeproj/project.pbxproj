@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC044175278E247A00677744 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC044174278E247A00677744 /* ListViewModel.swift */; };
 		FC4F9CCF278C891B00A63657 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F9CCE278C891B00A63657 /* ToDoListApp.swift */; };
 		FC4F9CD3278C892C00A63657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4F9CD2278C892C00A63657 /* Assets.xcassets */; };
 		FC4F9CD6278C892C00A63657 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4F9CD5278C892C00A63657 /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC044174278E247A00677744 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		FC4F9CCB278C891B00A63657 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4F9CCE278C891B00A63657 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		FC4F9CD2278C892C00A63657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC044173278E20D800677744 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FC044174278E247A00677744 /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		FC4F9CC2278C891B00A63657 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4F9CCE278C891B00A63657 /* ToDoListApp.swift */,
+				FC044173278E20D800677744 /* ViewModels */,
 				FCEFE105278CE52B00814A5F /* Models */,
 				FC71B5BC278C8CBC00AF9A22 /* Views */,
 				FC4F9CD2278C892C00A63657 /* Assets.xcassets */,
@@ -165,6 +176,7 @@
 			files = (
 				FCEFE10B278CE5CA00814A5F /* ItemModel.swift in Sources */,
 				FCEFE102278CD9C200814A5F /* AddView.swift in Sources */,
+				FC044175278E247A00677744 /* ListViewModel.swift in Sources */,
 				FC4F9CCF278C891B00A63657 /* ToDoListApp.swift in Sources */,
 				FC71B5BE278C8CF100AF9A22 /* ListView.swift in Sources */,
 				FCEFE0FF278CD2BB00814A5F /* ListRowView.swift in Sources */,

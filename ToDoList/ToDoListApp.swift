@@ -17,15 +17,16 @@ import SwiftUI
  
  */
 
-
 @main
 struct ToDoListApp: App {
+    @StateObject var listViewModel : ListViewModel = ListViewModel()
+
     var body: some Scene {
         WindowGroup {
             //make navigate for all view
             NavigationView{
                 ListView()
-            }
+            }.environmentObject(listViewModel) //must be obversevable object
         }
     }
 }
