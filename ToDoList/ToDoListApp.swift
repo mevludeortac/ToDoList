@@ -26,7 +26,8 @@ struct ToDoListApp: App {
             //make navigate for all view
             NavigationView{
                 ListView()
-            }.environmentObject(listViewModel) //must be obversevable object
+            }.navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(listViewModel) //mustbe obversevable object
         }
     }
 }
