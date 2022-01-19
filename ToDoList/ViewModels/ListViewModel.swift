@@ -6,19 +6,39 @@
 //
 
 import Foundation
+ 
+/*
+    CRUD FUNCTIONS
+ CREATE
+ READ
+ UPDATE
+ DELETE
+ 
+ */
+
+
 class ListViewModel :ObservableObject {
-    @Published var items : [ItemModel] = []
+    @Published var items : [ItemModel] = [] {
+        didSet{
+            saveItems()
+        }
+    }
+    let itemsKey : String = "item_list"
     init(){
         getItems()
     }
     func getItems(){
-        let newItems = [
-            ItemModel(title: "I will start make and app with SwiftUI", isComplited: true),
-            ItemModel(title: "I put an app in AppStore", isComplited: false),
-            ItemModel(title: "did i fuck your mom", isComplited: true)
-        ]
+        
         //use contentOff for multiple items
-        items.append(contentsOf: newItems)
+        //items.append(contentsOf: newItems)
+        
+        guard
+            let data  = UserDefaults.standard.data(forKey: itemsKey),
+            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else {
+            return
+            
+        }
     }
     func deleteItem(indexSet: IndexSet){
         items.remove(atOffsets: indexSet)
@@ -26,5 +46,20 @@ class ListViewModel :ObservableObject {
     }
     func moveItem(from: IndexSet, to: Int){
         items.move(fromOffsets: from, toOffset: to)
+    }
+    func addItem(title: String){
+        let newItem = ItemModel(title: title, isComplited: false)
+        items.append(newItem  )
+    }
+    func updateItem(item: ItemModel){
+        if let index = items.firstIndex(where: {$0.id == item.id}){
+            items[index] = item.updateCompletion()
+        }
+    }
+    func saveItems(){
+        //dizimizi json dataya dönüştürme işlemi
+        if let encodedData = try? JSONEncoder().encode(items){
+            UserDefaults.standard.set(encodedData, forKey: itemsKey)
+        }
     }
 }
