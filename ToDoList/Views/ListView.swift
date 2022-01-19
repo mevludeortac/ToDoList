@@ -15,7 +15,7 @@ struct ListView: View {
         
         ZStack{
             if listViewModel.items.isEmpty{
-                Text("no items!")
+                NoItemsView()
             }
             else{
                 
